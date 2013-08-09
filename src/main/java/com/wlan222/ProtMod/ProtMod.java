@@ -21,7 +21,7 @@ public class ProtMod extends JavaPlugin {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param lobbyManager The LobbyManager that should be registered
 	 */
 	public void registerLobbyManager(LobbyManager lobbyManager) {
@@ -31,7 +31,7 @@ public class ProtMod extends JavaPlugin {
 
 	/**
 	 * Check if ProtMod is managing this player.
-	 * 
+	 *
 	 * @param p Player to check
 	 * @return true if the Player is in any ProtMod powered Minigame
 	 */
@@ -46,7 +46,7 @@ public class ProtMod extends JavaPlugin {
 
 	/**
 	 * Get the ProtMod Lobby that the given player is in.
-	 * 
+	 *
 	 * @param p Player to check
 	 * @return The Lobby of the Player, or null if not in one. This works
 	 *         globally across all ProtMod powered Minigames
