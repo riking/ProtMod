@@ -1,43 +1,46 @@
 package com.wlan222.ProtMod.events.game;
 
-import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
 import com.wlan222.ProtMod.lobby.Lobby;
 
-public class GameEndEvent extends Event {
+/**
+ * This event is called when a game is ended for any reason.
+ */
+public class GameEndEvent extends GameEvent {
 
-	private static final HandlerList handlers = new HandlerList();
-	private Lobby lobby;
-	private String gameid;
+    private static final HandlerList handlers = new HandlerList();
+    private Lobby lobby;
+    private String gameid;
 
-	/**
-	 * Called when a game was ended by your plugin
-	 * 
-	 * @param l
-	 *            The Lobby
-	 * @param gid
-	 *            The unique Minigame ID
-	 */
-	public GameEndEvent(Lobby l, String gid) {
-		lobby = l;
-		gameid = gid;
-	}
+    public GameEndEvent(Lobby l) {
+        super(l);
+    }
 
-	public Lobby getLobby() {
-		return lobby;
-	}
+    /**
+     * The Lobby whose game is ending.
+     *
+     * @return the lobby
+     */
+    public Lobby getLobby() {
+        return lobby;
+    }
 
-	public String getGameID() {
-		return gameid;
-	}
+    /**
+     * The unique game identifier of the game that is ending.
+     *
+     * @return game identifier
+     */
+    public String getGameID() {
+        return gameid;
+    }
 
-	@Override
-	public HandlerList getHandlers() {
-		return handlers;
-	}
-	
-	public static HandlerList getHandlerList() {
-		return handlers;
-	}
+    @Override
+    public HandlerList getHandlers() {
+        return handlers;
+    }
+
+    public static HandlerList getHandlerList() {
+        return handlers;
+    }
 }
