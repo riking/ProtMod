@@ -30,33 +30,33 @@ public class ProtMod extends JavaPlugin {
 	}
 
 	/**
+	 * Check if ProtMod is managing this player.
 	 * 
 	 * @param p Player to check
 	 * @return true if the Player is in any ProtMod powered Minigame
 	 */
 	public boolean isPlayer(Player p) {
-		boolean flag = false;
 		for (LobbyManager lm : hooks) {
 			if (lm.isPlayer(p)) {
-				flag = true;
+				return true;
 			}
 		}
-		return flag;
+		return false;
 	}
 
 	/**
+	 * Get the ProtMod Lobby that the given player is in.
 	 * 
 	 * @param p Player to check
 	 * @return The Lobby of the Player, or null if not in one. This works
 	 *         globally across all ProtMod powered Minigames
 	 */
 	public Lobby getLobbyByPlayer(Player p) {
-		Lobby l = null;
 		for (LobbyManager lm : hooks) {
 			if (lm.isPlayer(p)) {
-				l = lm.getLobbyByPlayer(p);
+				return lm.getLobbyByPlayer(p);
 			}
 		}
-		return l;
+		return null;
 	}
 }
