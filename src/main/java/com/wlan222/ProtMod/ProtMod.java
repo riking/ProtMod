@@ -16,29 +16,23 @@ public class ProtMod extends JavaPlugin {
 	ArrayList<LobbyManager> hooks = new ArrayList<LobbyManager>();
 
 	public void onEnable() {
-		Bukkit.getPluginManager().registerEvents(new LobbyJoinListener(this),
-				this);
-		Bukkit.getPluginManager().registerEvents(new PlayerQuitListener(this),
-				this);
+		Bukkit.getPluginManager().registerEvents(new LobbyJoinListener(this), this);
+		Bukkit.getPluginManager().registerEvents(new PlayerQuitListener(this), this);
 	}
 
 	/**
 	 * 
-	 * @param lobbyManager
-	 *            The LobbyManager that should be registered
+	 * @param lobbyManager The LobbyManager that should be registered
 	 */
 	public void registerLobbyManager(LobbyManager lobbyManager) {
-		getLogger().info(
-				"The Minigame '" + lobbyManager.getGameID()
-						+ "' hooked into ProtMod");
+		getLogger().info("The Minigame '" + lobbyManager.getGameID() + "' hooked into ProtMod");
 		hooks.add(lobbyManager);
 	}
 
 	/**
 	 * 
-	 * @param p
-	 *            Player to check
-	 * @return If the Player is in any ProtMod powered Minigame
+	 * @param p Player to check
+	 * @return true if the Player is in any ProtMod powered Minigame
 	 */
 	public boolean isPlayer(Player p) {
 		boolean flag = false;
@@ -52,10 +46,9 @@ public class ProtMod extends JavaPlugin {
 
 	/**
 	 * 
-	 * @param p
-	 *            Player to check
-	 * @return The Lobby of the Player. This works globally across all ProtMod
-	 *         powered Minigames
+	 * @param p Player to check
+	 * @return The Lobby of the Player, or null if not in one. This works
+	 *         globally across all ProtMod powered Minigames
 	 */
 	public Lobby getLobbyByPlayer(Player p) {
 		Lobby l = null;
