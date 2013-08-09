@@ -1,0 +1,8 @@
+author: wlan222
+database: false
+description: "A Minigame engine\r\n"
+generator: http://dinnerbone.com/minecraft/tools/pluginator/
+main: com.wlan222.protmod.ProtMod
+name: ProtMod
+startup: startup
+version: '1.0'

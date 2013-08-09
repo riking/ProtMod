@@ -1,0 +1,7 @@
+author: wlan222
+database: false
+description: "A Minigame engine"
+main: com.wlan222.protmod.ProtMod
+name: ProtMod
+startup: startup
+version: '1.0'
